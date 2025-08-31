@@ -64,24 +64,25 @@ More detailed build instructions can be found [here](docs/install_vortex.md).
 - [Ramulator](https://github.com/CMU-SAFARI/ramulator.git)
 - [Yosys](https://github.com/YosysHQ/yosys)
 - [Sv2v](https://github.com/zachjs/sv2v)
-### Install development tools
-```sh
-sudo apt-get install build-essential
-sudo apt-get install binutils
-sudo apt-get install python
-sudo apt-get install uuid-dev
-sudo apt-get install git
-```
+## Setup 
 ### Install Vortex codebase
 ```sh
 git clone --depth=1 --recursive https://github.com/vortexgpgpu/vortex.git
 cd vortex
 ```
+### Install system dependencies
+```sh
+# ensure dependent libraries are present
+sudo ./ci/install_dependencies.sh
+```
 ### Configure your build folder
 ```sh
-mkdir build
-cd build
-../configure --xlen=32 --tooldir=$HOME/tools
+    mkdir build
+    cd build
+    # for 32bit
+    ../configure --xlen=32 --tooldir=$HOME/tools
+    # for 64bit
+    ../configure --xlen=64 --tooldir=$HOME/tools
 ```
 ### Install prebuilt toolchain
 ```sh
@@ -100,28 +101,47 @@ make -s
 ```sh
 ./ci/blackbox.sh --cores=2 --app=vecadd
 ```
+### Build Tiny-gpt
+```sh
+# From Vortex root for V1
+cd tests/opencl/tinygptv1
+make clean
+make
+# From Vortex root for V1
+cd tests/opencl/tinygptv1
+make clean
+make
+```
+### Run - Command for Sim
+```sh
+# For v2 from vortex root
+./ci/blackbox.sh \
+  --clusters=1 --cores=1 --warps=4 --threads=4 --driver=simx --app=tinygptv2 \
+  --args="-engine persist  -tokens15\
+  --perf=1
 
-### Common Developer Tips
-- Installing Vortex kernel and runtime libraries to use with external tools requires passing --prefix=<install-path> to the configure script.
-```sh
-../configure --xlen=32 --tooldir=$HOME/tools --prefix=<install-path>
-make -s
-make install
+./ci/blackbox.sh \
+  --clusters=1 --cores=4 --warps=4 --threads=4 --driver=simx --app=tinygptv2 \
+  --args="-engine slice -groups 4 -tokens 15 -temp 0.8 -topk 5 -penalty 1.1" \
+  --perf=1
+
+./ci/blackbox.sh --clusters=1 --cores=1 --warps=4 --threads=4 --driver=simx --app=tinygptv2 \
+  --args="-engine slice -groups 1 -tokens 15 -temp 0.8 -topk 5 -penalty 1.1" --perf=1
+
+# For v1 from vortex root
+./ci/blackbox.sh --clusters=1 --cores=1 --warps=4 --threads=4 --driver=simx --app=tinygptv1 \
+--args="-temp 0.7 -topk 5 -penalty 1.1 -tokens 15"
+
+./ci/blackbox.sh --clusters=1 --cores=2 --warps=4 --threads=4 --driver=simx --app=tinygptv1 \
+--args="-temp 0.7 -topk 5 -penalty 1.1 -tokens 15"
 ```
-- Building Vortex 64-bit simply requires using --xlen=64 configure option.
+
+### FPGA Execution
+- To run tiny-gpt on FPGA hardware bitstream is required. For guidelines for bitstrean synthesis refer to docs/fpga_setup
+- After generating bitsream from vrotex root run these commands for FPGA testing. Note: FPGA_BIN_DIR use location of your generated bitstrea
 ```sh
-../configure --xlen=32 --tooldir=$HOME/tools
+VX_FAST_EXIT=1 TARGET=hw FPGA_BIN_DIR=/tools/mk248883/vortex/hw/syn/xilinx/xrt/test1_xilinx_u280_gen3x16_xdma_1_202211_1_hw/bin ./ci/blackbox.sh --cores=1 --driver=xrt --app=tinygpt --args="-temp 0.7 -topk 5 -penalty 1.1 -tokens 15"
+
+VX_FAST_EXIT=1 TARGET=hw FPGA_BIN_DIR=/tools/mk248883/vortex/hw/syn/xilinx/xrt/test2_xilinx_u280_gen3x16_xdma_1_202211_1_hw/bin ./ci/blackbox.sh --cores=2 --driver=xrt --app=tinygpt --args="-temp 0.7 -topk 5 -penalty 1.1 -tokens 15"
 ```
-- Sourcing "./ci/toolchain_env.sh" is required everytime you start a new terminal. we recommend adding "source <build-path>/ci/toolchain_env.sh" to your ~/.bashrc file to automate the process at login.
-```sh
-echo "source <build-path>/ci/toolchain_env.sh" >> ~/.bashrc
 ```
-- Making changes to Makefiles in your source tree or adding new folders will require executing the "configure" script again to get it propagated into your build folder.
-```sh
-../configure
-```
-- To debug the GPU, you can generate a "run.log" trace. see /docs/debugging.md for more information.
-```sh
-./ci/blackbox.sh --app=demo --debug=3
-```
-- For additional information, check out the /docs.
