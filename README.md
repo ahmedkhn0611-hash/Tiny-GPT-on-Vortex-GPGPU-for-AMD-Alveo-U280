@@ -1,6 +1,26 @@
+# Tiny-GPT-on-Vortex-GPGPU-for-AMD-Alveo-U280
+Tiny-GPT on Vortex GPGPU for AMD Alveo U280 is a lightweight, end-to-end demo of GPT-style text generation running on the open-source RISC-V Vortex GPGPU architecture, deployed to an AMD/Xilinx Alveo U280 FPGA. The repo includes OpenCL device kernels and host code for a compact two-layer mat-vec inference loop with configurable temperature/top-k sampling, plus Python utilities to train and export small .npy weight files. It’s designed to showcase an open, reproducible AI/ML stack on FPGA—from building bitstreams and launching with XRT to capturing performance metrics (instructions, cycles, IPC) and exploring multicore scaling.
+
+# Team Information
+
+- Team number: AOHW25_616
+- Project name: Tiny-GPT-on-Vortex-GPGPU-for-AMD-Alveo-U280
+- University name: University of Essex
+- Participant(s):
+  -- Muhammadn Ahmed Khan
+  -- Ya-lun Lee
+  -- Qizal Arsalan
+- Supervisor: Dr. Xiajun Zhai
+
 # Vortex GPGPU
 
-Vortex is a full-stack open-source RISC-V GPGPU.
+Vortex is a full-stack open-source RISC-V GPGPU. Vortex supports multiple backend drivers, including our C++ simulator (simx), an RTL simulator, and physical Xilinx and Altera FPGAs-- all controlled by a single driver script. The chosen driver determines the corresponding code invoked to run Vortex. Generally, developers will prototype their intended design in simx, before completing going forward with an RTL implementation. Alternatively, you can get up and running by selecting a driver of your choice and running a demo program.
+
+## Credits & Upstream
+
+This work builds on **Vortex GPGPU** (Apache-2.0): https://github.com/vortexgpgpu/vortex  
+Major changes here: TinyGPT kernels, host flow, U280 configs, and build scripts.  
+If you use this repo, please also cite the Vortex MICRO’21 paper (see upstream README).
 
 ## Specifications
 
