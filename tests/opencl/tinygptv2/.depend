@@ -1,0 +1,10 @@
+main.o: /tools/mk248883/vortex/tests/opencl/tinygpt/main.cc \
+ /home/mk24883/tools/pocl/include/CL/opencl.h \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /home/mk24883/tools/pocl/include/CL/cl_gl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext_pocl.h \
+ /tools/mk248883/vortex/tests/opencl/tinygpt/cnpy.h
+cnpy.o: cnpy.cpp cnpy.h

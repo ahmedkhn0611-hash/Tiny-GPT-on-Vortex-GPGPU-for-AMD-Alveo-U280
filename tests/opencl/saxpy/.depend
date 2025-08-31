@@ -1,0 +1,4 @@
+main.o: /tools/mk248883/vortex/tests/opencl/saxpy/main.cc \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h

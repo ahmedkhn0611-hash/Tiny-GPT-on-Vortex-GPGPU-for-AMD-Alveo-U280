@@ -1,0 +1,29 @@
+main.o: /tools/mk248883/vortex/tests/opencl/dotproduct/main.cc \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/oclUtils.h \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/shrUtils.h \
+ /home/mk24883/tools/pocl/include/CL/opencl.h \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /home/mk24883/tools/pocl/include/CL/cl_gl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext_pocl.h \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/shrQATest.h
+oclUtils.o: /tools/mk248883/vortex/tests/opencl/dotproduct/oclUtils.cpp \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/oclUtils.h \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/shrUtils.h \
+ /home/mk24883/tools/pocl/include/CL/opencl.h \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /home/mk24883/tools/pocl/include/CL/cl_gl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext_pocl.h
+shrUtils.o: /tools/mk248883/vortex/tests/opencl/dotproduct/shrUtils.cpp \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/shrUtils.h \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/cmd_arg_reader.h \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/exception.h
+cmd_arg_reader.o: \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/cmd_arg_reader.cpp \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/cmd_arg_reader.h \
+ /tools/mk248883/vortex/tests/opencl/dotproduct/exception.h

@@ -1,0 +1,4 @@
+main.o: /tools/mk248883/vortex/tests/regression/io_addr/main.cpp \
+ /tools/mk248883/vortex/runtime/include/vortex.h \
+ /tools/mk248883/vortex/hw/VX_config.h \
+ /tools/mk248883/vortex/tests/regression/io_addr/common.h

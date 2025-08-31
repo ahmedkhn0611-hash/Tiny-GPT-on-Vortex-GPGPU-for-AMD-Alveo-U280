@@ -1,0 +1,18 @@
+main.o: /tools/mk248883/vortex/tests/opencl/guassian/main.cc \
+ /tools/mk248883/vortex/tests/opencl/guassian/gaussianElim.h \
+ /tools/mk248883/vortex/tests/opencl/guassian/clutils.h \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /home/mk24883/tools/pocl/include/CL/opencl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_gl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext_pocl.h
+clutils.o: /tools/mk248883/vortex/tests/opencl/guassian/clutils.cpp \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /tools/mk248883/vortex/tests/opencl/guassian/clutils.h \
+ /tools/mk248883/vortex/tests/opencl/guassian/utils.h
+utils.o: /tools/mk248883/vortex/tests/opencl/guassian/utils.cpp \
+ /tools/mk248883/vortex/tests/opencl/guassian/utils.h

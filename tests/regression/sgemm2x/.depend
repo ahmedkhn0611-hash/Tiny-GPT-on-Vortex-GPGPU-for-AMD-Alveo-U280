@@ -1,0 +1,3 @@
+main.o: /tools/mk248883/vortex/tests/regression/sgemm2x/main.cpp \
+ /tools/mk248883/vortex/runtime/include/vortex.h \
+ /tools/mk248883/vortex/tests/regression/sgemm2x/common.h

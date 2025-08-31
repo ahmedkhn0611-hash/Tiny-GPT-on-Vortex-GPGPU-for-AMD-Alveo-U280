@@ -1,0 +1,37 @@
+main.o: /tools/mk248883/vortex/tests/opencl/spmv/main.cc \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /home/mk24883/tools/pocl/include/CL/cl_ext.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/parboil.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/convert_dataset.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/file.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/gpu_info.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/ocl.h
+parboil_opencl.o: \
+ /tools/mk248883/vortex/tests/opencl/spmv/parboil_opencl.c \
+ /tools/mk248883/vortex/tests/opencl/spmv/parboil.h \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/perfmon.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/perf_util.h
+args.o: /tools/mk248883/vortex/tests/opencl/spmv/args.c \
+ /tools/mk248883/vortex/tests/opencl/spmv/parboil.h \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h
+gpu_info.o: /tools/mk248883/vortex/tests/opencl/spmv/gpu_info.c \
+ /tools/mk248883/vortex/tests/opencl/spmv/gpu_info.h
+file.o: /tools/mk248883/vortex/tests/opencl/spmv/file.c
+convert_dataset.o: \
+ /tools/mk248883/vortex/tests/opencl/spmv/convert_dataset.c \
+ /tools/mk248883/vortex/tests/opencl/spmv/convert_dataset.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/mmio.h
+mmio.o: /tools/mk248883/vortex/tests/opencl/spmv/mmio.c \
+ /tools/mk248883/vortex/tests/opencl/spmv/mmio.h
+ocl.o: /tools/mk248883/vortex/tests/opencl/spmv/ocl.c \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /tools/mk248883/vortex/tests/opencl/spmv/ocl.h

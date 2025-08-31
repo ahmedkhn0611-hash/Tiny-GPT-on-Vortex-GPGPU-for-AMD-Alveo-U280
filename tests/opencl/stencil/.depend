@@ -1,0 +1,26 @@
+main.o: /tools/mk248883/vortex/tests/opencl/stencil/main.cc \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /tools/mk248883/vortex/tests/opencl/stencil/parboil.h \
+ /tools/mk248883/vortex/tests/opencl/stencil/file.h \
+ /tools/mk248883/vortex/tests/opencl/stencil/ocl.h
+args.o: /tools/mk248883/vortex/tests/opencl/stencil/args.c \
+ /tools/mk248883/vortex/tests/opencl/stencil/parboil.h \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h
+parboil_opencl.o: \
+ /tools/mk248883/vortex/tests/opencl/stencil/parboil_opencl.c \
+ /tools/mk248883/vortex/tests/opencl/stencil/parboil.h \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h
+ocl.o: /tools/mk248883/vortex/tests/opencl/stencil/ocl.c \
+ /home/mk24883/tools/pocl/include/CL/cl.h \
+ /home/mk24883/tools/pocl/include/CL/cl_version.h \
+ /home/mk24883/tools/pocl/include/CL/cl_platform.h \
+ /tools/mk248883/vortex/tests/opencl/stencil/ocl.h
+gpu_info.o: /tools/mk248883/vortex/tests/opencl/stencil/gpu_info.c \
+ /tools/mk248883/vortex/tests/opencl/stencil/gpu_info.h
+file.o: /tools/mk248883/vortex/tests/opencl/stencil/file.c

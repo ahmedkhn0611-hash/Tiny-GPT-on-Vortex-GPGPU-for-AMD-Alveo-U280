@@ -1,0 +1,8 @@
+/build*
+/.vscode
+*.cache
+*.code-workspace
+
+# Ignore heavy synth outputs
+hw/syn/xilinx/xrt/test1_xilinx_u280_gen3x16_xdma_1_202211_1_hw/
+hw/syn/xilinx/xrt/test2_xilinx_u280_gen3x16_xdma_1_202211_1_hw/
