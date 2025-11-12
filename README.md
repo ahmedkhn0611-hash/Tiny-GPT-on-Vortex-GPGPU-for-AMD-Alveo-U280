@@ -7,7 +7,7 @@ Tiny-GPT on Vortex GPGPU for AMD Alveo U280 is a lightweight, end-to-end demo of
 - Project name: Tiny-GPT-on-Vortex-GPGPU-for-AMD-Alveo-U280
 - University name: University of Essex
 - Participant(s):
-  -- Muhammadn Ahmed Khan
+  -- Muhammad Ahmed Khan
   -- Ya-lun Lee
   -- Qizal Arsalan
 - Supervisor: Dr. Xiajun Zhai
