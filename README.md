@@ -1,7 +1,14 @@
 # Tiny-GPT-on-Vortex-GPGPU-for-AMD-Alveo-U280
 Tiny-GPT on Vortex GPGPU for AMD Alveo U280 is a lightweight, end-to-end demo of GPT-style text generation running on the open-source RISC-V Vortex GPGPU architecture, deployed to an AMD/Xilinx Alveo U280 FPGA. The repo includes OpenCL device kernels and host code for a compact two-layer mat-vec inference loop with configurable temperature/top-k sampling, plus Python utilities to train and export small .npy weight files. It’s designed to showcase an open, reproducible AI/ML stack on FPGA—from building bitstreams and launching with XRT to capturing performance metrics (instructions, cycles, IPC) and exploring multicore scaling.
 
-# Team Information
+
+# AMD Open Hardware Competition (Winner 2025)
+This project was also part of AMD Open Hardware Competition (Adaptive Computing- Student Level) for the year 2025.  
+https://www.openhw.eu/2025_results_1
+Youtube Video Link:
+https://youtu.be/SDaqhbEOV1Q
+
+## Team Information
 
 - Team number: AOHW25_616
 - Project name: Tiny-GPT-on-Vortex-GPGPU-for-AMD-Alveo-U280
